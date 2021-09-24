@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button/Button';
+import Card from './components/Card/Card';
+import Card2 from './components/Card2/Card2';
+import Titulo from './components/Titulo/Titulo';
 
-function App() {
+function App(props) {
+  function handleClick() {
+    console.log('Clicou!')
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Titulo title="Exercício Props" />
+      <Button handleClick={handleClick} />
+      <Card title="Card1" name="Fulaninho" age="38" city="Jaciara" career="Dentista" />
+      <Card2>
+        {props.children}
+      </Card2>
     </div>
   );
 }
